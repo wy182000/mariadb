@@ -258,6 +258,7 @@ support-files/my-large.cnf
 support-files/my-medium.cnf
 support-files/my-small.cnf
 support-files/ndb-config-2-node.ini
+Testing/
 tests/bug25714
 tests/mysql_client_test
 tests/async_queries
