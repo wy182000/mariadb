@@ -23,7 +23,7 @@ test -x /usr/sbin/mysqld || exit 0
 
 SELF=$(cd $(dirname $0); pwd -P)/$(basename $0)
 CONF=/etc/mysql/my.cnf
-MYADMIN="/usr/bin/mysqladmin --defaults-file=/etc/mysql/debian.cnf"
+MYADMIN="/usr/bin/mysqladmin"
 
 # priority can be overriden and "-s" adds output to stderr
 ERR_LOGGER="logger -p daemon.err -t /etc/init.d/mysql -i"
@@ -170,7 +170,7 @@ case "${1:-''}" in
 	log_end_msg 0
 	;;
 
-  'status')
+  status)
 	if mysqld_status check_alive nowarn; then
 	  log_action_msg "$($MYADMIN version)"
 	else
